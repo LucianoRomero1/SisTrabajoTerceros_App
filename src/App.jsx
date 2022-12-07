@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { CustomRoutes } from './routing/CustomRoutes';
 
 function App() {
   return <div className="layout">

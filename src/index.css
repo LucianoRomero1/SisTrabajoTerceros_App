@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* navbar */
+.bg-basso-red {
+    background-color: #BD2821 !important;
+}
