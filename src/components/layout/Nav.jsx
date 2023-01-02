@@ -91,7 +91,7 @@ export const Nav = () => {
         />
       </Flex>
       <Flex display={[isOpen ? "flex" : "none", "flex"]}>
-        <Stack align="center" direction={["column", "row"]} spacing="10">
+        <Stack align="center" direction={["column", "row"]} spacing="10" mt={[isOpen ? "2" : ""]}>
           <NavLink to="/" element={<Home />}>
             <Button variant="link" aria-label="Home" w="100%" color="white">
               Home
