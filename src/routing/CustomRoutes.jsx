@@ -5,6 +5,7 @@ import { Error } from "../components/pages/Error";
 import { Footer } from "../components/layout/Footer";
 import { Header } from "../components/layout/Header";
 import { Nav } from "../components/layout/Nav";
+import { Placeholder } from "../components/pages/Placeholder";
 
 export const CustomRoutes = () => {
     return (
@@ -19,6 +20,7 @@ export const CustomRoutes = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="*" element={<Error />} />
                     <Route path="/home" element={<Home />} />
+                    <Route path="/placeholder" element={<Placeholder />} />
                 </Routes>
             </section>
 
