@@ -6,26 +6,27 @@ import { Footer } from "../components/layout/Footer";
 import { Header } from "../components/layout/Header";
 import { Nav } from "../components/layout/Nav";
 import { Placeholder } from "../components/pages/Placeholder";
+import { Box } from "@chakra-ui/react";
 
 export const CustomRoutes = () => {
-    return (
-        <BrowserRouter>
-            {/* {layout top} */}
-            <Nav />
-            <Header />
-            
-            {/* {Central content & Routes} */}
-            <section>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="*" element={<Error />} />
-                    <Route path="/home" element={<Home />} />
-                    <Route path="/placeholder" element={<Placeholder />} />
-                </Routes>
-            </section>
+  return (
+    <BrowserRouter>
+      {/* {layout top} */}
+      <Nav />
+      <Header />
 
-            {/* {layout bottom} */}
-            <Footer />
-        </BrowserRouter>
-    )
-}
+      {/* {Central content & Routes} */}
+      <Box px={10} py={3}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Error />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/placeholder" element={<Placeholder />} />
+        </Routes>
+      </Box>
+
+      {/* {layout bottom} */}
+      <Footer />
+    </BrowserRouter>
+  );
+};

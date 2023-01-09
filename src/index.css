@@ -6,3 +6,10 @@
 .bg-basso-red {
     background-color: #BD2821 !important;
 }
+
+.fixed-bottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

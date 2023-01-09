@@ -17,7 +17,7 @@ import { Placeholder } from "../pages/Placeholder";
 export const Nav = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Flex py={3} px={5} direction={["column", "row"]} justify="space-between" className="bg-basso-red">
+    <Flex py={3} px={10} direction={["column", "row"]} justify="space-between" className="bg-basso-red">
       <Flex alignItems="center" wrap="wrap">
         <Flex flexGrow={1} justify="center">
           <Heading ml={[4, 0]}>
