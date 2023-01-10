@@ -3,7 +3,6 @@ import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import { Home } from "../components/pages/Home";
 import { Error } from "../components/pages/Error";
 import { Footer } from "../components/layout/Footer";
-import { Header } from "../components/layout/Header";
 import { Nav } from "../components/layout/Nav";
 import { Placeholder } from "../components/pages/Placeholder";
 import { Box } from "@chakra-ui/react";
@@ -13,7 +12,6 @@ export const CustomRoutes = () => {
     <BrowserRouter>
       {/* {layout top} */}
       <Nav />
-      <Header />
 
       {/* {Central content & Routes} */}
       <Box px={10} py={3}>
