@@ -1,29 +1,30 @@
 import React from "react";
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import { Home } from "../components/pages/Home";
-import { Home } from "../components/pages/Error";
+import { Error } from "../components/pages/Error";
 import { Footer } from "../components/layout/Footer";
-import { Header } from "../components/layout/Header";
-import { Navbar } from "../components/layout/Navbar";
+import { Nav } from "../components/layout/Nav";
+import { Placeholder } from "../components/pages/Placeholder";
+import { Box } from "@chakra-ui/react";
 
 export const CustomRoutes = () => {
-    return (
-        <BrowserRouter>
-            {/* {layout top} */}
-            <Navbar />
-            <Header />
-            
-            {/* {Central content & Routes} */}
-            <section>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="*" element={<Error />} />
-                    <Route path="/home" element={<Home />} />
-                </Routes>
-            </section>
+  return (
+    <BrowserRouter>
+      {/* {layout top} */}
+      <Nav />
 
-            {/* {layout bottom} */}
-            <Footer />
-        </BrowserRouter>
-    )
-}
+      {/* {Central content & Routes} */}
+      <Box px={10} py={3}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Error />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/placeholder" element={<Placeholder />} />
+        </Routes>
+      </Box>
+
+      {/* {layout bottom} */}
+      <Footer />
+    </BrowserRouter>
+  );
+};

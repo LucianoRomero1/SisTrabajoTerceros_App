@@ -1,9 +1,14 @@
-import { useState } from 'react'
+import { CustomRoutes } from "./routing/CustomRoutes";
+import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
-  return <div className="layout">
-    <CustomRoutes />
-  </div>;
+  return (
+    <div className="layout">
+      <ChakraProvider>
+        <CustomRoutes />
+      </ChakraProvider>
+    </div>
+  );
 }
 
-export default App
+export default App;

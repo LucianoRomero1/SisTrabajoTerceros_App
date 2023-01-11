@@ -1,10 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Header } from "../layout/Header";
 
-export const Home = () =>{
-    return (
-        <div className=''>
-            <h1>Bienvenido</h1>
-        </div>
-    )
-}
+export const Home = () => {
+  return (
+    <div className="">
+      <Header />
+      Im home page
+    </div>
+  );
+};
