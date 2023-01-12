@@ -49,7 +49,7 @@ export const Nav = () => {
       <Flex alignItems="center" wrap="wrap">
         <Flex flexGrow={1} justify="center">
           <Heading ml={[4, 0]}>
-            <NavLink to="/" element={<Home />}>
+            <NavLink to="/" element={<Home />} name="Home" aria-label="/" onClick={handlePrincipalBreadc}>
               <img className="logoBasso" src="/img/bassosa.png" alt="Logo Basso" />
             </NavLink>
           </Heading>

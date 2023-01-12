@@ -6,6 +6,7 @@ import { Footer } from "../components/layout/Footer";
 import { Nav } from "../components/layout/Nav";
 import { Placeholder } from "../components/pages/Placeholder";
 import { Box } from "@chakra-ui/react";
+import { Details } from "../components/pages/Details";
 
 export const CustomRoutes = () => {
   return (
@@ -20,6 +21,7 @@ export const CustomRoutes = () => {
           <Route path="*" element={<Error />} />
           <Route path="/home" element={<Home />} />
           <Route path="/placeholder" element={<Placeholder />} />
+          <Route path="/details" element={<Details />} />
         </Routes>
       </Box>
 

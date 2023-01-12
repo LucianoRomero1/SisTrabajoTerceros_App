@@ -14,6 +14,7 @@ export const breadcrumbSlice = createSlice({
   initialState,
   reducers: {
     prependRoute: (state, action) => {
+      console.log("toy aca");
       const { name, type } = action.payload;
       //Con esto NO repito el breadcrumb que estaba
       const foundBreadcrumb = state.find((breadcrumb) => breadcrumb.name === name);
