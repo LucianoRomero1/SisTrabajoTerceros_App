@@ -18,6 +18,7 @@ import { useDispatch } from "react-redux";
 import { prependRoute, removeRoutes } from "../../features/breadcrumbs/breadcrumbSlice";
 import { v4 as uuid } from "uuid";
 import { Error } from "../pages/Error";
+import { PlaceholderTwo } from "../pages/PlaceholderTwo";
 
 export const Nav = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -29,7 +30,7 @@ export const Nav = () => {
 
   const handlePrincipalBreadc = (e) => {
 
-    if(e.target.name == "Home"){
+    if(e.target.name == "Home" || e.target.name == "Error"){
       return dispatch(removeRoutes());
     }
     
@@ -68,6 +69,11 @@ export const Nav = () => {
           <NavLink to="/placeholder" element={<Placeholder />}>
             <Button variant="link" name="Placeholder" aria-label="/placeholder" w="100%" color="white" onClick={handlePrincipalBreadc}>
               Placeholder
+            </Button>
+          </NavLink>
+          <NavLink to="/placeholder2" element={<PlaceholderTwo />}>
+            <Button variant="link" name="Placeholder2" aria-label="/placeholder2" w="100%" color="white" onClick={handlePrincipalBreadc}>
+              Placeholder2
             </Button>
           </NavLink>
           <NavLink to="/error" element={<Error />}>
