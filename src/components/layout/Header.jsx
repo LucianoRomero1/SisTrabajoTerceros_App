@@ -10,10 +10,6 @@ import { Center, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-//Acá tengo que recibir como prop la ruta
-//Y una segunda prop cuando sean rutas anidadas, puede ser un array y de ahi lo recorro con un map
-//Anidada puede ser cuando por ejemplo es una ruta adentro de otra, que deriva de una misma digamos
-//Sino va a ser siempre HOME > Ruta (prop)
 export const Header = () => {
 
   const breadcrumbs = useSelector((state) => state.breadcrumbs);
