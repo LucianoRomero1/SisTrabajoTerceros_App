@@ -1,4 +1,4 @@
-# SisEtiquetasApp
+# SisBaseApp
 App React del SisEtiquetas
 
 Comandos para instalar React + Vite

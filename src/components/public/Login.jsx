@@ -1,0 +1,119 @@
+import React, { useState } from "react";
+import useAuth from "../../hooks/useAuth";
+import { useForm } from "../../hooks/useForm";
+import { Global } from "../../helpers/Global";
+
+export const Login = () => {
+  const { form, changed } = useForm({});
+  const [saved, setSaved] = useState("not_sended");
+  const [error, setError] = useState("");
+  const [passwordType, setPasswordType] = useState("password");
+  const { setAuth } = useAuth();
+
+  const loginUser = async (e) => {
+    e.preventDefault();
+
+    let userToLogin = form;
+
+    try {
+      const request = await fetch(Global.apiUrl + "user/login", {
+        method: "POST",
+        body: JSON.stringify(userToLogin),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+  
+      const data = await request.json();
+      if (data.status == "success") {
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user", JSON.stringify(data.user));
+  
+        setSaved("logged");
+  
+        setTimeout(() => {
+          setAuth(data.user);
+          window.location.reload();
+        }, 1500);
+      } else {
+        setSaved("error");
+        setError(data.message);
+        setTimeout(() => {
+          setSaved("not_sended");
+        }, 1500);
+      }
+    } catch (error) {
+      setSaved("error");
+      setTimeout(() => {
+        setSaved("not_sended");
+      }, 1500);
+    }
+  };
+
+  const togglePassword = () => {
+    passwordType === "password"
+      ? setPasswordType("text")
+      : setPasswordType("password");
+  };
+
+  return (
+    <div className="container">
+      <div className="text-center mt-5">
+        <img src="/favicon.png" alt="Logo Basso" width="310" height="180" />
+      </div>
+      <div className="text-center">
+        <h2>Iniciar Sesión</h2>
+        <form className="form-signin" onSubmit={loginUser}>
+          <div className="input-group input-group-lg">
+            <input
+              type="text"
+              className="form-control text-center"
+              name="username"
+              placeholder="Usuario"
+              onChange={changed}
+              required
+            />
+          </div>
+
+          <div className="input-group input-group-lg mt-1">
+            <input
+              type={passwordType}
+              className="form-control text-center"
+              name="password"
+              placeholder="Password"
+              onChange={changed}
+              required
+            />
+            <button type="button" className="input-group-text" onClick={togglePassword}>
+              {passwordType == "text" ? (
+                <i className="fas fa-eye"></i>
+              ) : (
+                <i className="fas fa-eye-slash"></i>
+              )}
+            </button>
+          </div>
+
+          <button
+            className="mt-4 btn btn-lg btn-primary btn-block"
+            type="submit"
+          >
+            Ingresar
+          </button>
+        </form>
+        <div className="text-center mt-2">
+          {saved == "logged" ? (
+            <strong className="alert alert-success">User logged in</strong>
+          ) : (
+            ""
+          )}
+
+          {saved == "error" ? (
+            <strong className="alert alert-danger">{error}</strong>
+          ) : (
+            ""
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};

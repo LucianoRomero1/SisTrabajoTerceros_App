@@ -1,5 +1,5 @@
 export const Global = {
-    //Acá lo tengo que reemplazar por el nombre del api al que apunta
-    //En este caso de ejemplo voy a usar el SisBaseApi
-    url: "http://localhost/SisBaseApi/",
-  };
+  //TODO: Remmplazar el nombre del SISTEMA por el que vaya a utilizar
+  apiUrl: "http://localhost/SisAppBase_Api/web/app_dev.php/",
+  baseUrl: "/SisAppBase/web/"
+};
